@@ -1,46 +1,65 @@
 #!/bin/bash
 
+sudo su
+
 # обновление системы
-sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install ubuntu-restricted-extras
+apt-get update && sudo apt-get upgrade
+apt list --upgradable
+apt-get install software-properties-common
+apt-get install ubuntu-restricted-extras
+
+# git
+add-apt-repository ppa:git-core/ppa
+apt-get update
+apt-get install git
+
+# nodejs (ver. 7)
+curl -sL https://deb.nodesource.com/setup_7.x | bash -
+apt-get install -y nodejs
+
+# thunderbird (mail)
+sudo add-apt-repository ppa:ubuntu-mozilla-security/ppa
+sudo apt-get update
+sudo apt-get install thunderbird
 
 # chrome
-sudo dpkg --install google-chrome-stable_current_amd64.deb
-sudo apt install -f
+curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb
+rm -rf google-chrome-stable_current_amd64.deb
 
 # расширенные настройки
-sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily
-sudo apt-get update
-sudo apt-get install elementary-tweaks
+add-apt-repository ppa:mpstark/elementary-tweaks-daily
+apt-get update
+apt-get install elementary-tweaks
 
 # media player
-sudo apt-get install vlc
+apt-get install vlc
 
 # libreoffice
-sudo apt-get install libreoffice
+apt-get install libreoffice
 
 # skype
-sudo apt-get install skype
+apt-get install skype
 
 # torrent
-sudo apt-get install transmission
+apt-get install transmission
 
 # image
-sudo apt-get install gimp
-sudo apt-get install krita
+apt-get install gimp
+apt-get install krita
 
 # rar
-sudo apt-get install rar
+apt-get install rar
 
 #java
-sudo apt-get install icedtea-8-plugin openjdk-8-jre
+apt-get install icedtea-8-plugin openjdk-8-jre
 
 # batery
-sudo add-apt-repository ppa:linrunner/tlp
-sudo apt-get update
-sudo apt-get install tlp tlp-rdw
-sudo tlp start
+add-apt-repository ppa:linrunner/tlp
+apt-get update
+apt-get install tlp tlp-rdw
+tlp start
 
 # optimizer ram
-sudo apt-get install zram-config
+apt-get install zram-config
 swapon -s
