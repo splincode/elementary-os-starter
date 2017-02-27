@@ -60,6 +60,11 @@ apt-get update
 apt-get install tlp tlp-rdw
 tlp start
 
+# joxi
+cd /tmp
+wget http://dl.joxi.ru/linux/joxi-3.0.9_amd64.deb
+dpkg -i joxi-3.0.9_amd64.deb
+
 # optimizer ram
 apt-get install zram-config
 swapon -s
