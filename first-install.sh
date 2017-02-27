@@ -28,9 +28,9 @@ apt install ./google-chrome-stable_current_amd64.deb
 rm -rf google-chrome-stable_current_amd64.deb
 
 # расширенные настройки
-add-apt-repository ppa:mpstark/elementary-tweaks-daily
-apt-get update
+curl -sL  http://i-hate-farms.github.io/spores/install | sudo bash - 
 apt-get install elementary-tweaks
+gsettings set org.pantheon.files.preferences single-click false
 
 # media player
 apt-get install vlc
