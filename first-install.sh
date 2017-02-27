@@ -52,7 +52,7 @@ apt-get install krita
 apt-get install rar
 
 #java
-apt-get install icedtea-8-plugin openjdk-8-jre
+apt-get install icedtea-8-plugin openjdk-8-jre openjdk-8-jdk
 
 # batery
 add-apt-repository ppa:linrunner/tlp
@@ -60,11 +60,30 @@ apt-get update
 apt-get install tlp tlp-rdw
 tlp start
 
+# sublime text 3
+add-apt-repository ppa:webupd8team/sublime-text-3
+apt-get update
+apt-get install sublime-text-installer
+
 # joxi
 cd /tmp
 wget http://dl.joxi.ru/linux/joxi-3.0.9_amd64.deb
 dpkg -i joxi-3.0.9_amd64.deb
+apt-get -f install libqt5declarative5 \ 
+                    libqt5x11extras5   \ 
+                    libqt5sql5         \
+                    libqt5sql5-sqlite  \
+                    libqt5script5      \
+                    libqt5xmlpatterns5 \ 
+                    libqt5xml5         \ 
+                    libqt5multimedia5  \
+                    libmcrypt4
 
 # optimizer ram
 apt-get install zram-config
 swapon -s
+
+# fix problem
+apt-get install indicator-applet
+apt-get install indicator-application
+apt-get install indicator-applet-complete
