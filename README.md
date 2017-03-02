@@ -2,6 +2,11 @@
 
 <img src="https://adam.merrifield.ca/wp-content/uploads/2016/09/eos-loki-menu-1024x576.png" align="center">
 
+### Установка (копируйте к себе содержимое elementary-install.sh)
+```shell
+$ sh elementary-install.sh
+```
+
 ### В состав входит
 
 1. Joxi
